@@ -20,8 +20,7 @@ public class Student {
 								 + studentList.get(i).getKor()
 								 + studentList.get(i).getMath());
 		}
-		
-		
+
 		System.out.println("학번 정렬 출력");
 		Collections.sort(studentList);//학번으로 정렬하기
 		for(int i = 0; i<studentList.size();i++) {
