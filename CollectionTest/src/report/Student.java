@@ -45,6 +45,7 @@ class SumSort implements Comparator<StudentList>{
 
 	@Override
 	public int compare(StudentList stu1, StudentList stu2) {
+		int cnt=0;
 		if(new Integer(stu1.getSum()).compareTo(stu2.getSum())==0) {
 			return stu1.getNum().compareTo(stu2.getNum())*-1;
 		}else {
