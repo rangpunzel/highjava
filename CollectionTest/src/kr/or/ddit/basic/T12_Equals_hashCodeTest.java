@@ -59,6 +59,7 @@ public class T12_Equals_hashCodeTest {
 		System.out.println("remove(p2) 후 데이터");
 		for(Person p : set) {
 			System.out.println(p.getId() + " : " + p.getName());
+			
 		}
 	}
 

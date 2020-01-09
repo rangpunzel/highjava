@@ -11,6 +11,7 @@ public class Lotto {
 	
 	public static void main(String[] args) {
 		start();
+		
 
 	}
 	
@@ -20,17 +21,17 @@ public class Lotto {
 		int input = 0;
 		
 		do {
-		System.out.println("=================");
-		System.out.println("Lotto 프로그램");
-		System.out.println("-----------------");
-		System.out.println("1. Lotto 구입");
-		System.out.println("2. 프로그램 종료");
-		System.out.println("=================");
-		System.out.print("메뉴 선택 : ");
-		input = Integer.parseInt(s.nextLine());
-		if(input == 1) {
-			buy();
-		}
+			System.out.println("=================");
+			System.out.println("Lotto 프로그램");
+			System.out.println("-----------------");
+			System.out.println("1. Lotto 구입");
+			System.out.println("2. 프로그램 종료");
+			System.out.println("=================");
+			System.out.print("메뉴 선택 : ");
+			input = Integer.parseInt(s.nextLine());
+			if (input == 1) {
+				buy();
+			}
 		
 		}while(input != 2);
 		
@@ -39,10 +40,8 @@ public class Lotto {
 	}
 	
 	static void buy() {
-		int input = 0;
-		int buy = 0;
-		int a = 0;
-		int cnt = 0;
+		int input,buy,a,cnt = 0;
+	
 		Scanner s = new Scanner(System.in);
 		System.out.println("Lotto 구입 시작");
 		System.out.println("(1000원에 로또번호 하나입니다.)");
@@ -79,7 +78,10 @@ public class Lotto {
 		Collections.sort(randomList);
 		
 		for(int i =0;i<randomList.size();i++) {
-			System.out.print(randomList.get(i) + " ");
+			System.out.print(randomList.get(i));
+			if(i != randomList.size()-1) {
+				System.out.print(", ");
+			}
 		}
 		System.out.println();
 
