@@ -15,6 +15,7 @@ public class BoardMain {
 	private Scanner scan = new Scanner(System.in); 
 	
 	public void displayMenu(){
+		
 		System.out.println();
 		System.out.println("----------------------");
 		System.out.println("  === 작 업 선 택 ===");
