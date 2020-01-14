@@ -3,6 +3,7 @@ package kr.or.ddit.basic;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -23,6 +24,7 @@ public class T03_JdbcTest {
 		Connection conn = null;
 		Statement stmt = null;
 		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		
 		try {
 			// 1. 드라이버 로딩
@@ -57,6 +59,7 @@ public class T03_JdbcTest {
 			System.out.println("세번째 반환값 : " + cnt);*/
 			
 			
+			/*
 			// PreparedStatement객체를 이용한 자료 추가 방법
 			
 			// SQL문 작성(데이터가 들어갈 자리에 물음표(?)를 넣는다)
@@ -90,6 +93,37 @@ public class T03_JdbcTest {
 			
 			cnt = pstmt.executeUpdate();
 			System.out.println("세번째 반환값 : " + cnt);
+			*/
+			/*SQL Inject 예제 */
+			
+
+			
+			String lprod_gu ="' or 1=1 --";
+			String sql = "select * from lprod " 
+					   + " where lprod_gu =? and lprod_nm = '축산물'";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, lprod_gu);
+			
+			System.out.println("실행할 쿼리 : " + sql);
+			
+			rs = pstmt.executeQuery(); 
+			
+			// 5. ResultSet객체에 저장되어 있는 자료를 반복문과 next()메서드를
+			// 이용하여 차례로 읽어와 처리한다.
+			 System.out.println("=== 쿼리문 실행결과 ===");
+			 
+			 // re.next() => ResultSet객체의 데이터를 가리키는 포인터를
+			 //				다음 레코드로 이동시키고 그 곳에 자료가 있으면
+			 //				true, 없으면 false를 반환한다.
+			 while(rs.next()) {
+				 //컬럼의 자료를 가져오는 방법
+				 //방법1) rs.get자료형이름("컬럼명")
+				 //방법2) rs.get자료형이름(컬럼번호) => 컬럼번호는 1번부터 시작.
+				 System.out.println("1prod_id : " + rs.getInt("lprod_id"));
+				 System.out.println("1prod_gu : " + rs.getString("lprod_gu"));
+				 System.out.println("1prod_nm : " + rs.getString("lprod_nm"));
+				 System.out.println("------------------------------------------");
+			 }
 			
 			System.out.println("작업 끝...");
 		}catch(ClassNotFoundException e) {
@@ -98,6 +132,7 @@ public class T03_JdbcTest {
 			e.printStackTrace();
 		} finally {
 			// 6. 종료 ( 사용했던 자원을 모두 반납한다. )
+			if(rs != null) try {rs.close();} catch(SQLException e2) {}
 			if(pstmt != null) try {pstmt.close();} catch(SQLException e2) {}
 			if(stmt != null) try {stmt.close();} catch(SQLException e2) {}
 			if(conn != null) try {conn.close();} catch(SQLException e2) {}
