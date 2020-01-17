@@ -4,7 +4,7 @@ import java.util.List;
 
 
 public class BoardServiceImpl implements BoardService {
-	private BoardDao boardDao = new BoardDaoImpl();
+	private BoardDao boardDao = new BoardDaoImpl(); //객체 생성을 하지 않으면 NullPointer가 떨어짐
 	
 	@Override
 	public int insertBoard(BoardVO bv) {
