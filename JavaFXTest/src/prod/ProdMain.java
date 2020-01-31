@@ -1,4 +1,4 @@
-package address;
+package prod;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,14 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AddrMain extends Application {
+public class ProdMain extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("PostCode.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("prod.fxml"));
 		
 		Scene scene = new Scene(root);
-		primaryStage.setTitle("우편번호 검색");
+		primaryStage.setTitle("지선이네 상품관리");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

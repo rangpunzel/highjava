@@ -39,13 +39,15 @@ public class AddrController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		//컬럼에 값셋팅해주기.
+		//컬럼에 VO변수와 매칭되는 값셋팅해주기.
 		codeCol.setCellValueFactory(new PropertyValueFactory<>("zipcode"));
 		dongCol.setCellValueFactory(new PropertyValueFactory<>("dong"));
 		sidoCol.setCellValueFactory(new PropertyValueFactory<>("sido"));
 		gugunCol.setCellValueFactory(new PropertyValueFactory<>("gugun"));
 		bunjiCol.setCellValueFactory(new PropertyValueFactory<>("bunji"));
 		
+		
+		//콤보박스 세팅
 		ObservableList<String> list = 
 				FXCollections.observableArrayList("우편번호","동이름");
 		comboBox.setItems(list);
@@ -66,7 +68,7 @@ public class AddrController implements Initializable{
 			
 			// 해당DB에 접속(Connection객체 생성)
 			String url = "jdbc:oracle:thin:@localhost:1521/xe";
-			String userId = "pc04";  //오라클 접속아이디
+			String userId = "js_home";  //오라클 접속아이디
 			String password = "java";//오라클 접속아이디의 비밀번호
 			
 			// OracleDriver가 사용되는 부분
@@ -91,20 +93,21 @@ public class AddrController implements Initializable{
 			List<AddrVO> tableList = new ArrayList<AddrVO>();
 			// ResultSet객체에 저장되어 있는 자료를 반복문과 next()메서드를 이용하여 차례로 읽어와 처리한다.
 			 while(rs.next()) {
+				 
 				 AddrVO advo = new AddrVO();
 				 advo.setZipcode(rs.getString("zipcode"));
 				 advo.setDong(rs.getString("dong"));
-				 advo.setDong(rs.getString("sido"));
-				 advo.setDong(rs.getString("gugun"));
-				 advo.setDong(rs.getString("bunji"));
+				 advo.setSido(rs.getString("sido"));
+				 advo.setGugun(rs.getString("gugun"));
+				 advo.setBunji(rs.getString("bunji"));
 				 
-				 tableList.add(advo);
+				 tableList.add(advo);//VO 객체에 담아서 어레이리스트에 담음.
 
 				 
 			 }
-			 tableData = FXCollections.observableArrayList(tableList);
+			 tableData = FXCollections.observableArrayList(tableList); //어레이리스트에 담은 데이터를 observableArrayList에 담음
 			 
-			 tableView.setItems(tableData);
+			 tableView.setItems(tableData); //observableArrayList에 담은 데이터를 테이블뷰에 세팅.
 		}catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		}catch(SQLException e) {

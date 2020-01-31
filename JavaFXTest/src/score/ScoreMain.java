@@ -1,4 +1,4 @@
-package report;
+package score;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

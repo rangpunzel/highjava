@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prod.ProdController">
+   <children>
+      <TableView fx:id="tableView" layoutX="6.0" layoutY="40.0" prefHeight="452.0" prefWidth="887.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="89.0" text="PROD_ID" />
+          <TableColumn fx:id="nameCol" prefWidth="92.0" text="PROD_NAME" />
+            <TableColumn fx:id="lguCol" prefWidth="95.0" text="PROD_LGU" />
+            <TableColumn fx:id="buyerCol" prefWidth="118.0" text="PROD_BUYER" />
+            <TableColumn fx:id="costCol" prefWidth="97.0" text="PROD_COST" />
+            <TableColumn fx:id="priceCol" prefWidth="91.0" text="PROD_PRICE" />
+            <TableColumn fx:id="saleCol" prefWidth="94.0" text="PROD_SALE" />
+            <TableColumn fx:id="outLineCol" prefWidth="106.0" text="PROD_OUTLINE" />
+            <TableColumn fx:id="detailCol" prefWidth="99.0" text="PROD_DETAIL" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="combo1" layoutX="260.0" layoutY="6.0" prefWidth="130.0" />
+      <ComboBox fx:id="combo2" disable="true" layoutX="426.0" layoutY="6.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

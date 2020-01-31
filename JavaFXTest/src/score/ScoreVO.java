@@ -1,4 +1,4 @@
-package report;
+package score;
 
 public class ScoreVO {
 	private String name;
