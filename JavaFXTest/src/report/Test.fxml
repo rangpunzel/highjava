@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="report.Controller">
+   <children>
+      <HBox layoutX="6.0" layoutY="7.0" prefHeight="50.0" spacing="5.0">
+         <children>
+            <Label text="이 름 :" />
+            <TextField fx:id="txtField" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox layoutX="6.0" layoutY="57.0" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Label text="성 별 :" />
+            <RadioButton fx:id="gender1" mnemonicParsing="false" selected="true" text="남">
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="gender2" mnemonicParsing="false" text="여" toggleGroup="$gender" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox layoutX="6.0" layoutY="107.0" prefHeight="50.0" spacing="10.0">
+         <children>
+            <Label text="취 미 : " />
+            <CheckBox fx:id="chkBox1" mnemonicParsing="false" text="여행" />
+            <CheckBox fx:id="chkBox2" mnemonicParsing="false" text="등산" />
+            <CheckBox fx:id="chkBox3" mnemonicParsing="false" text="독서" />
+            <CheckBox fx:id="chkBox4" mnemonicParsing="false" text="바둑" />
+            <CheckBox fx:id="chkBox5" mnemonicParsing="false" text="장기" />
+            <CheckBox fx:id="chkBox6" mnemonicParsing="false" text="게임" />
+            <CheckBox fx:id="chkBox7" mnemonicParsing="false" text="테니스" />
+            <CheckBox fx:id="chkBox8" mnemonicParsing="false" text="배드민턴" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <Button fx:id="btn" layoutX="14.0" layoutY="157.0" mnemonicParsing="false" onAction="#btnClicked" prefWidth="50.0" text="보  기" />
+      <TextArea fx:id="txtArea" editable="false" layoutX="14.0" layoutY="190.0" prefHeight="280.0" prefWidth="400.0" />
+   </children>
+</Pane>

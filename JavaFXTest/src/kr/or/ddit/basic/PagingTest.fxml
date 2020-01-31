@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.basic.PagingController">
+   <children>
+      <TableView fx:id="tableView" layoutX="21.0" layoutY="15.0" prefHeight="385.0" prefWidth="561.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="94.0" text="ID" />
+          <TableColumn fx:id="name" prefWidth="98.0" text="이름" />
+            <TableColumn fx:id="address" prefWidth="275.0" text="주소" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="pagination" layoutX="9.0" layoutY="5.0" prefHeight="467.0" prefWidth="587.0" />
+   </children>
+</AnchorPane>
