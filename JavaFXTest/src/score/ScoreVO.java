@@ -3,17 +3,25 @@ package score;
 public class ScoreVO {
 	private String name;
 	private int korScore;
-	private int MatScore;
+	private int matScore;
 	private int engScore;
-
+	
+	public ScoreVO() {
+		
+	}
+	
+	
+	
 	public ScoreVO(String name, int korScore, int matScore, int engScore) {
 		super();
 		this.name = name;
 		this.korScore = korScore;
-		MatScore = matScore;
+		this.matScore = matScore;
 		this.engScore = engScore;
 	}
-	
+
+
+
 	public String getName() {
 		return name;
 	}
@@ -27,10 +35,10 @@ public class ScoreVO {
 		this.korScore = korScore;
 	}
 	public int getMatScore() {
-		return MatScore;
+		return matScore;
 	}
 	public void setMatScore(int matScore) {
-		MatScore = matScore;
+		this.matScore = matScore;
 	}
 	public int getEngScore() {
 		return engScore;
@@ -40,6 +48,5 @@ public class ScoreVO {
 	}
 	
 	
-
 
 }

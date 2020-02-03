@@ -13,7 +13,7 @@ public class ScoreMain extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("score.fxml"));
 		
 		Scene scene = new Scene(root);
-		primaryStage.setTitle("과제");
+		primaryStage.setTitle("성적관리");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
