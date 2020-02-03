@@ -66,7 +66,7 @@ public class ProdController implements Initializable{
 			
 			// 해당DB에 접속(Connection객체 생성)
 			String url = "jdbc:oracle:thin:@localhost:1521/xe";
-			String userId = "js_home";  //오라클 접속아이디
+			String userId = "pc04";  //오라클 접속아이디
 			String password = "java";//오라클 접속아이디의 비밀번호
 			
 			// OracleDriver가 사용되는 부분
@@ -123,7 +123,7 @@ public class ProdController implements Initializable{
 						
 						// 해당DB에 접속(Connection객체 생성)
 						String url = "jdbc:oracle:thin:@localhost:1521/xe";
-						String userId = "js_home";  //오라클 접속아이디
+						String userId = "pc04";  //오라클 접속아이디
 						String password = "java";//오라클 접속아이디의 비밀번호
 						
 						// OracleDriver가 사용되는 부분
@@ -183,7 +183,7 @@ public class ProdController implements Initializable{
 						
 						// 해당DB에 접속(Connection객체 생성)
 						String url = "jdbc:oracle:thin:@localhost:1521/xe";
-						String userId = "js_home";  //오라클 접속아이디
+						String userId = "pc04";  //오라클 접속아이디
 						String password = "java";//오라클 접속아이디의 비밀번호
 						
 						// OracleDriver가 사용되는 부분
