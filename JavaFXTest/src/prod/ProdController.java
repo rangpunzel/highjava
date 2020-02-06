@@ -86,7 +86,7 @@ public class ProdController implements Initializable{
 			// ResultSet객체에 저장되어 있는 자료를 반복문과 next()메서드를 이용하여 차례로 읽어와 처리한다.
 			 while(rs.next()) {
 				 combo1List.add(rs.getString("lprod_nm"));//VO 객체에 담아서 어레이리스트에 담음.
-
+				 System.out.println(rs.getString("lprod_nm"));
 			 }
 			 ObservableList<String> list = 
 						FXCollections.observableArrayList(combo1List);
